@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
 
     class Number {
 
-
         boolean isTriangularNumber(int num){
 
             int calc_num = 8*num+1;
