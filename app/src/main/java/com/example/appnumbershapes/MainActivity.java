@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
     class Number {
@@ -41,29 +42,37 @@ public class MainActivity extends AppCompatActivity {
     public void checkNumber(View view){
 
         EditText enteredNumberEditText = findViewById(R.id.enteredNumberEditText);
-        int enteredNumber = Integer.parseInt(enteredNumberEditText.getText().toString());
-        TextView isSquare = findViewById(R.id.isSquareTextView);
-        TextView isTriangular = findViewById(R.id.isTriangularTextView);
 
-        Number number = new Number();
-
-        if (number.isSquareNumber(enteredNumber)){
-            isSquare.setText("Number " +enteredNumber+ " is square!");
-        } else {
-            isSquare.setText("Number " +enteredNumber+ " is NOT square!");
+        if (enteredNumberEditText.getText().toString().isEmpty()){
+            enteredNumberEditText.setError("Please enter a number!");
         }
 
-        if (number.isTriangularNumber(enteredNumber)){
-            isTriangular.setText("Number " +enteredNumber+ " is triangular!");
-        } else {
-            isTriangular.setText("Number " +enteredNumber+ " is NOT triangular!");
-        }
+        else {
+            int enteredNumber = Integer.parseInt(enteredNumberEditText.getText().toString());
+            TextView isSquare = findViewById(R.id.isSquareTextView);
+            TextView isTriangular = findViewById(R.id.isTriangularTextView);
 
+            Number number = new Number();
+
+            if (number.isSquareNumber(enteredNumber)) {
+                isSquare.setText("Number " + enteredNumber + " is square!");
+            } else {
+                isSquare.setText("Number " + enteredNumber + " is NOT square!");
+            }
+
+            if (number.isTriangularNumber(enteredNumber)) {
+                isTriangular.setText("Number " + enteredNumber + " is triangular!");
+            } else {
+                isTriangular.setText("Number " + enteredNumber + " is NOT triangular!");
+            }
+
+        }
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 }
