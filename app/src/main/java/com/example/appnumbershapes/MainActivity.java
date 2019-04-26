@@ -7,10 +7,10 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static boolean isTriangularNumber(long num) {
+    public static boolean isTriangularNumber(int num) {
 
-        long calc_num = 8*num+1;
-        long t = (long) Math.sqrt(calc_num);
+        int calc_num = 8*num+1;
+        int t = (int) Math.sqrt(calc_num);
 
         if (t*t==calc_num) {
             System.out.println(+num+ " IS triangular!");
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean isSquareNumber(long num) {
+    public static boolean isSquareNumber(int num) {
 
         for (int i = 0; i < num / 2 + 2; i++)
         {
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkNumber(View view){
 
-        EditText enteredNumber = findViewById(R.id.enteredNumberEditText);
+        EditText enteredNumberEditText = findViewById(R.id.enteredNumberEditText);
 
 
 
