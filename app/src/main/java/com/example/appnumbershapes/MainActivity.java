@@ -42,22 +42,22 @@ public class MainActivity extends AppCompatActivity {
     public void checkNumber(View view){
 
         EditText enteredNumberEditText = findViewById(R.id.enteredNumberEditText);
-        int enteredNumber = Integer.parseInt(String.valueOf(enteredNumberEditText));
+        int enteredNumber = Integer.parseInt(enteredNumberEditText.getText().toString());
         TextView isSquare = findViewById(R.id.isSquareTextView);
         TextView isTriangular = findViewById(R.id.isTriangularTextView);
 
         Number number = new Number();
 
         if (number.isSquareNumber(enteredNumber)){
-            isSquare.setText("Number " +enteredNumber+ "is square!");
+            isSquare.setText("Number " +enteredNumber+ " is square!");
         } else {
-            isSquare.setText("Number " +enteredNumber+ "is NOT square!");
+            isSquare.setText("Number " +enteredNumber+ " is NOT square!");
         }
 
         if (number.isTriangularNumber(enteredNumber)){
-            isTriangular.setText("Number " +enteredNumber+ "is triangular!");
+            isTriangular.setText("Number " +enteredNumber+ " is triangular!");
         } else {
-            isTriangular.setText("Number " +enteredNumber+ "is NOT triangular!");
+            isTriangular.setText("Number " +enteredNumber+ " is NOT triangular!");
         }
 
     }
